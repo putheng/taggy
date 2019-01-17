@@ -73,3 +73,9 @@ $lession->save();
 # Name or slug version of value in tags table
 $lession->tag(['Laravel', 'php']);
 ```
+
+Tag to an existing lessions
+```php
+$lession = Lession::find(1);
+$lession->tag(['Redis']);
+```
