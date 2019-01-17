@@ -33,7 +33,7 @@ class Lession extends Model {
 ```
 
 ## Usage
-Seed your tags table in a controller
+#### Seed the tags table
 ```php
 use Putheng\Taggy\Models\Tag;
 
@@ -58,3 +58,5 @@ $tags = [
 
 Tag::insert($tags);
 ```
+
+#### Tag a lession
