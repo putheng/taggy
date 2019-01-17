@@ -27,7 +27,9 @@ Your model should use `Putheng\Taggy\TaggableTrait` trait to enable tags:
 ```php
 use Putheng\Taggy\TaggableTrait;
 
-class Foo extends Model {
+class Lession extends Model {
     use TaggableTrait;
 }
 ```
+
+## Usage
