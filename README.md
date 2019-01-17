@@ -33,17 +33,28 @@ class Lession extends Model {
 ```
 
 ## Usage
-Seed your tags table
+Seed your tags table in a controller
 ```php
 use Putheng\Taggy\Models\Tag;
 
-public function store(){
-	foreach(['PHP', 'Laravel', 'Testing', 'Redis', 'Postgresql', 'Fun stuff'] as $tag){
-		\Tag::create([
-			'name' => $tag,
-			'slug' => str_slug($tag),
-			'count' => 0,
-		]);
-	}
-}
+$tags = [
+	[
+		'name' => 'PHP',
+		'slug' => str_slug('PHP')
+	],
+	[
+		'name' => 'Laravel',
+		'slug' => str_slug('Laravel')
+	],
+	[
+		'name' => 'Testing',
+		'slug' => str_slug('Testing')
+	],
+	[
+		'name' => 'Redis',
+		'slug' => str_slug('Redis')
+	],
+];
+
+Tag::insert($tags);
 ```
