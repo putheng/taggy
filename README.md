@@ -78,7 +78,7 @@ $tags = Putheng\Taggy\Models\Tag::whereIn('slug', ['php', 'laravel'])->get();
 $lession->tag($tags);
 
 # tag from a model
-$tag = Putheng\Taggy\Models\Tag::where('name', 'laravel')->first();
+$tag = Putheng\Taggy\Models\Tag::where('name', 'Laravel')->first();
 $lession->tag($tag);
 ```
 
@@ -88,10 +88,49 @@ $lession = Lession::find(1);
 $lession->tag(['Redis']);
 ```
 
+Untag from a lession
+```php
+$lession = Lession::find(1);
+$lession->untag(['Redis']);
+```
+
+Retag from a lession, will remove all tags from lession and retag again
+```php
+$lession = Lession::find(1);
+$lession->retag(['Redis']);
+```
+
 Show tags of a lession
 ```php
 $lession = Lession::find(1);
 
 # return collection of tags
 $tags = $lession->tags;
+```
+
+Get lessions of any tags
+```php
+# get lessions of any tags from array of tags's slug
+$lessions = Lession::withAnyTag(['php', 'laravel']);
+
+# return collection of lession
+$lessions->get();
+```
+
+Get lessions of all tags
+```php
+# get lessions of any tags from array of tags's slug
+$lessions = Lession::withAllTags(['php', 'laravel']);
+
+# return collection of lession
+$lessions->get();
+```
+
+Get lessions has tags
+```php
+# get lessions of any tags from array of tags's slug
+$lessions = Lession::hasTags(['php', 'laravel']);
+
+# return collection of lession
+$lessions->get();
 ```
