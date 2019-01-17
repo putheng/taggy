@@ -33,7 +33,8 @@ class Lession extends Model {
 ```
 
 ## Usage
-#### Seed the tags table
+#### Seed
+Seed the `tags` table
 ```php
 use Putheng\Taggy\Models\Tag;
 
