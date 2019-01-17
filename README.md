@@ -61,3 +61,15 @@ Tag::insert($tags);
 ```
 
 #### Tag a lession
+Create a new lession and tags
+
+```php
+use App\Lession;
+
+$lession = new Lession;
+$lession->title = 'a new lession';
+$lession->save();
+
+# Name or slug version of value in tags table
+$lession->tag(['Laravel', 'php']);
+```
