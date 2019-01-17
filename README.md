@@ -72,6 +72,14 @@ $lession->save();
 
 # name or slug version of value in tags table
 $lession->tag(['Laravel', 'php']);
+
+# tag from a collections of model
+$tags = Putheng\Taggy\Models\Tag::whereIn('slug', ['php', 'laravel'])->get();
+$lession->tag($tags);
+
+# tag from a model
+$tag = Putheng\Taggy\Models\Tag::where('name', 'laravel')->first();
+$lession->tag($tag);
 ```
 
 Tag to an existing lessions
