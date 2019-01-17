@@ -119,7 +119,7 @@ $lessions->get();
 
 Get lessions of all tags
 ```php
-# get lessions of any tags from array of tags's slug
+# get lessions of all tags from array of tags's slug
 $lessions = Lession::withAllTags(['php', 'laravel']);
 
 # return collection of lession
@@ -128,9 +128,26 @@ $lessions->get();
 
 Get lessions has tags
 ```php
-# get lessions of any tags from array of tags's slug
+# get lessions that has tags from array of tags's slug
 $lessions = Lession::hasTags(['php', 'laravel']);
 
 # return collection of lession
 $lessions->get();
+```
+
+A scope to retrieve any tags where the count
+```php
+use Putheng\Taggy\Models\Tag;
+
+# is greater than or equal to the given value.
+$tags = Tag::useGte();
+
+# is greater than to the given value.
+$tags = Tag::useGt();
+
+# is less than or equal to the given value.
+$tags = Tag::useLte();
+
+# is less than the given value.
+$tags = Tag::useLt();
 ```
